@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-*    **Nota:** Este repositório é uma versão pública (clone) do sistema original. Todas as informações sensíveis, credenciais de acesso e dados privados da instituição foram removidos ou descaracterizados para garantir a segurança e a conformidade com boas práticas de proteção de dados.
+* **Nota:** Este repositório é uma versão pública (clone) do sistema original. Todas as informações sensíveis, credenciais de acesso e dados privados da instituição foram removidos ou descaracterizados para garantir a segurança e a conformidade com boas práticas de proteção de dados.
 </p>
 
 
