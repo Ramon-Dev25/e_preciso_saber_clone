@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+:root {
+    --primary-color: #1c7ec2;
+    --primary-color-hover: #a0f1ff;
+    --primary-dark: #002c77;
+
+    --accent-color: #ffab73;
+    --accent-dark: #f47e2d;
+
+    --bg-page: #ebedf0;
+    /* cinza claro do fundo */
+    --card-grad-1: #14171c;
+    /* degradê cinza escuro */
+    --card-grad-2: #0e1116;
+    /* degradê cinza escuro */
+    --muted: #8a8f98;
+    --text: #eaeef5;
+    --title: #ffffff;
+    --input-bg: #171b22;
+    --input-border: #2a2f39;
+    --input-focus: #2f86ff;
+    --btn-blue-1: #3294ff;
+    --btn-blue-2: #1b6fff;
+    --btn-gray: #3a414b;
+    --shadow: 0 30px 60px rgba(0, 0, 0, .30), 0 10px 25px rgba(0, 0, 0, .15);
+    --radius-xl: 22px;
+
+
+    /* Gradients */
+    --gradient-space: linear-gradient(148deg, #002c77, hsl(210, 80%, 50%));
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Quicksand", sans-serif, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: var(--gradient-space);
+    display: grid;
+    place-items: center;
+    color: var(--text);
+}
+
+.logo img {
+    height: 2.5rem;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/background/efeito_universo.png');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* overlay */
+    background-blend-mode: darken;
+    /* ou multiply, overlay... */
+}
+
+.card {
+    position: relative;
+    width: min(1000px, 92vw);
+    height: 560px;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background-image: url('../img/background/efeito_universo.png');
+    box-shadow: var(--shadow);
+    isolation: isolate;
+    /* para overlays */
+}
+
+/* Colunas dentro do card */
+.panel {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* esquerda (form) / direita (imagem) */
+}
+
+/* Lado esquerdo: formulário */
+.left {
+    position: relative;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    background: var(--text);
+}
+
+.left-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    letter-spacing: .2px;
+    color: #c8d0da;
+    opacity: .95;
+}
+
+.brand .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--btn-blue-1);
+    box-shadow: 0 0 0 6px rgba(50, 148, 255, .15);
+}
+
+h1 {
+    margin: 0;
+    font-size: 42px;
+    line-height: 1.1;
+    color: var(--primary-color);
+}
+
+.title {
+    margin-bottom: 1rem;
+}
+
+.pretitle {
+    font-size: 14px;
+    letter-spacing: .18em;
+    color: var(--accent-dark);
+    font-weight: 600;
+    opacity: .85;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.muted a {
+    color: var(--btn-blue-1);
+    text-decoration: none;
+}
+
+form {
+    display: grid;
+    gap: 14px;
+    margin-top: 6px;
+    max-width: 520px;
+}
+
+.field {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--bg-page);
+    border: 1px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 12px 14px 12px 44px;
+    transition: .25s border, .25s box-shadow, .25s background;
+}
+
+.field i {
+    color: var(--primary-color);
+}
+
+.field input {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: none;
+    color: var(--card-grad-2);
+    font-size: 15px;
+}
+
+.field:hover {
+    border-color: #0a5be9;
+}
+
+.field:focus-within {
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 3px rgba(47, 134, 255, .25);
+}
+
+.icon {
+    position: absolute;
+    left: 12px;
+    width: 20px;
+    height: 20px;
+    opacity: .8;
+}
+
+.suffix-btn {
+    position: absolute;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    opacity: .9;
+}
+
+.suffix-btn i {
+    font-size: 1.3rem;
+}
+
+.suffix-btn:hover {
+    border-color: #3c4450;
+}
+
+.row {
+    display: flex;
+    gap: 12px;
+}
+
+.row .field {
+    flex: 1;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 6px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-blue {
+    font-family: "Quicksand", sans-serif, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    appearance: none;
+    border: 0;
+    border-radius: 999px;
+    padding: 14px 22px;
+    font-weight: 600;
+    width: 100%;
+    background: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(50, 148, 255, .25), inset 0 -4px 0 rgba(0, 0, 0, .15);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-blue:hover {
+    background: var(--accent-dark);
+    filter: brightness(1.03);
+}
+
+/* Lado direito: imagem */
+.right {
+    position: relative;
+    overflow: hidden;
+}
+
+.right::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('../img/Capa_do_site.png');
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.02);
+}
+
+/* gradiente escuro por cima da foto para dar contraste */
+.right::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(1200px 500px at -10% 50%, transparent 35%, rgba(7, 79, 147, 0.2) 70%), linear-gradient(90deg, rgba(20, 23, 28, .2) 0%, rgba(20, 23, 28, 0) 60%);
+    pointer-events: none;
+}
+
+/* Linha pontilhada curva entre as áreas */
+svg.curve {
+    position: absolute;
+    left: 56%;
+    top: 0;
+    height: 100%;
+    width: 220px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: .55;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .panel {
+        grid-template-columns: 1fr;
+    }
+
+    .right {
+        display: none;
+    }
+
+    .left {
+        padding: 2rem;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .brand {
+        justify-content: center
+    }
+
+    .title h1 {
+        margin-bottom: 0.5rem;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .logo img {
+        height: 3.5rem;
+        width: 100%;
+    }
+
+    svg.curve {
+        display: none;
+    }
+}

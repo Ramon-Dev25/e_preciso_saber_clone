@@ -1,0 +1,86 @@
+/* Container das notificações */
+.notification-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+    max-width: 350px;
+}
+
+/* Notificação base */
+.notification {
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    width: 350px;
+    animation: slideIn 0.4s ease, fadeOut 0.5s ease 4.5s forwards;
+}
+
+.note-info {
+    background: linear-gradient(90deg, #2196F3, #1E88E5);
+}
+
+.note-success {
+    background: linear-gradient(90deg, #10bb0d, #0a902c);
+}
+
+.note-warning {
+    background: linear-gradient(90deg, #f3f021, #b5ad06);
+    color: #222;
+}
+
+.note-danger {
+    background: linear-gradient(90deg, #f32121, #900a0a);
+}
+
+/* Cabeçalho da notificação */
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.icon-notification {
+    margin-right: 6px;
+}
+
+.title-notification {
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+.time-notification {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* Corpo da notificação */
+.notification-body {
+    font-size: 14px;
+}
+
+/* Animações */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+}
